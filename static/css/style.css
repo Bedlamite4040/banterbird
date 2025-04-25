@@ -1,0 +1,20 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: pink;
+    padding: 20px;
+    color:purple;   
+}
+hr {
+    border-color: purple;
+}
+img {
+    left:80%;
+    top: 2.5%;
+    position:absolute;
+    text-align:center;
+    border-style: solid;
+    border-color: purple;
+}
+title {
+    
+}

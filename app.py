@@ -7,6 +7,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/static/css')
+def StyleF():
+    return render_template("style.css")
+
+
 @app.route('/api/posts')
 def get_posts():
     with open('Tweets.json', "r") as file:
