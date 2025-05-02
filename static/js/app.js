@@ -1,4 +1,7 @@
-const username = "admin";
+let username = localStorage.getItem("username");
+if (!username) {
+    window.Location.href = "/login";
+}
 
 function renderPost(post) {
     const template = document.getElementById("post-template").content.cloneNode(true);
@@ -40,3 +43,18 @@ window.onload = async () => {
     }
     
 };
+
+setInterval( async () => {
+    try {
+        const response = await fetch("/api/posts");
+        const posts = await response.json();
+        document.getElementById("feed").innerHTML = "";
+        posts.forEach(post => {
+            renderPost(post);
+        });
+        
+    }   catch (error) {
+        console.error("pulling Fialed", error)
+    }
+    
+}, 5000);
